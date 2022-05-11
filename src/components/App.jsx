@@ -1,20 +1,18 @@
-import PhonebookForm from "./PhonebookForm";
-import Contacts from "./Contacts";
-import FilterField from "./Filter";
+
+import NavBar from './NavBar'
+import Phonebook from "./Phonebook/";
+import Authorisation from './Authorisation'
+import Wellcome from './Wellcome';
 
 export default function App() {
  
    
     return (
       <>
-        <h1>Phonebook</h1>
-        <PhonebookForm
-        />
-        
-        <h2>Contacts</h2>
-        <FilterField/>
-        <Contacts
-        />
+        <NavBar />
+        <Wellcome />
+        <Phonebook />
+        <Authorisation/>
                   
       </>
     )

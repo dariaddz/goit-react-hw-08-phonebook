@@ -1,6 +1,6 @@
 form {
-  border: 2px solid darkblue;
-  padding: 10px;
+  /* border: 2px solid var(--light-accent-color); */
+  /* padding: 10px; */
   display: flex;
   flex-direction: column;
 }
@@ -13,25 +13,39 @@ form {
 .input {
   display: flex;
   flex-direction: column;
+    margin-top: 10px;
+  border: 2px solid var(--light-accent-color);
+width:300px;
+background-color: var(--secondary-background-color)
+}
+
+.input:active,
+.input:focus
+{
+  outline:none;
+  border: 3px solid var(--light-accent-color);
+background-color: var(--primary-background-color)
 }
 
 .button {
   margin-top: 20px;
   padding: 5px;
-  width: 100px;
-  border: 2px solid darkblue;
+  width: 150px;
+  border: 2px solid var(--light-accent-color);
   border-radius: 3px;
-  background-color: rgb(133, 133, 211);
-  opacity: 0.8;
-  font-weight: 600;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-background-color);
+   font-weight: 600;
+  text-transform: uppercase;
+    transition: transform 200ms linear, font-weight 200ms linear;
 }
-.button:active {
+/* .button:active {
   box-shadow: 0 5px #666;
-}
+} */
 
 .button:hover,
 .button:focus {
   opacity: 1;
-  color: azure;
-  font-weight: 600;
+  font-weight: 700;
+  transform: scale(1.1);
 }

@@ -1,0 +1,35 @@
+.navBar{
+    display:flex;
+    justify-content: space-between;
+    /* background-color: #d1d2d2; */
+    background: linear-gradient(to right, rgba(247, 244, 246, 1), rgba(227, 213, 185, 0));
+  padding-top: 20px;
+padding-bottom: 10px;
+}
+
+.pageHead{
+    margin:0
+}
+.login{
+    display: flex;
+}
+.navLink{
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    width:100px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border:none;
+    border-radius: 3px;
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    transition: transform 200ms linear, background-color 200ms linear, color 200ms linear;
+}
+
+.navLink:hover,
+.navLink:focus {
+    transform: scale(1.1);
+background-color: var(--secondary-background-color);
+color: var(--secondary-text-color)
+}

@@ -15,7 +15,7 @@ const FilterField = () => {
   return (
     <div className={st.filter}>
       <label>Find contacts by name </label>
-      <input type="text" onChange={changeFilter} />
+      <input className={st.input} type="text" onChange={changeFilter} />
     </div>
   );
 };

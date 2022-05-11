@@ -3,5 +3,17 @@
   flex-direction: column;
   width: 200px;
   margin-bottom: 20px;
-  font-weight: 600;
+  
+}
+
+.input{
+  margin-top: 10px;
+  border: 2px solid var(--light-accent-color);
+background-color: var(--secondary-background-color);}
+
+.input:active,
+.input:focus {
+  outline: none;
+  border: 3px solid var(--light-accent-color);
+  background-color: var(--primary-background-color)
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAddContactMutation } from 'redux/contactsApi';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
 
 import st from './PhonebookForm.module.css';
@@ -82,7 +82,6 @@ function PhonebookForm({ contacts }) {
           Add Contact
         </button>
       </form>
-      <Toaster />
     </>
   );
 }
