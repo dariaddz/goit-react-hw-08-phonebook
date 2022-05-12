@@ -28,7 +28,7 @@ function SignUpView() {
   const handleSubmit = evt => {
     evt.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    console.log('submit');
+
     setName('');
     setEmail('');
     setPassword('');

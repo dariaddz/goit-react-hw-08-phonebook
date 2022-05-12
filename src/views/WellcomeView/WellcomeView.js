@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function WellcomeView() {
   return (
     <div className={st.wellcome}>
-      <h2>Wellcome to On-line Phonebook </h2>
+      {/* <h2>Wellcome to On-line Phonebook </h2> */}
       <div className={st.message}>
         <NavLink className={st.link} to="/signup">
           <button type="button" className={st.navLink}>

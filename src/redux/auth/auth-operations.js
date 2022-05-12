@@ -28,8 +28,16 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
   } catch (error) {}
 });
 
+const logOut = createAsyncThunk('auth/logout', async () => {
+  try {
+    await axios.post('/users/logout');
+    token.unset();
+  } catch (error) {}
+});
+
 const operations = {
   register,
   logIn,
+  logOut,
 };
 export default operations;

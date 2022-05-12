@@ -23,8 +23,7 @@ export default function LogInView() {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    dispatch(authOperations.register({ email, password }));
-    console.log('submit');
+    dispatch(authOperations.logIn({ email, password }));
 
     setEmail('');
     setPassword('');
