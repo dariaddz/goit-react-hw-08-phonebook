@@ -1,12 +1,38 @@
 import st from './LogInView.module.css';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import authOperations from '../../redux/auth/auth-operations';
+
 export default function LogInView() {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = ({ target: { name, value } }) => {
+    switch (name) {
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    dispatch(authOperations.register({ email, password }));
+    console.log('submit');
+
+    setEmail('');
+    setPassword('');
+  };
   return (
     <>
       <div className={st.authView}>
-        <form
-          // onSubmit={ } style={styles.form}
-          autoComplete="off"
-        >
+        <form onSubmit={handleSubmit} autoComplete="off">
           <h2> Log In</h2>
           <label className={st.label}>
             Email
@@ -14,8 +40,8 @@ export default function LogInView() {
               className={st.input}
               type="email"
               name="email"
-              // value={email}
-              // onChange={handleChange}
+              value={email}
+              onChange={handleChange}
             />
           </label>
 
@@ -25,8 +51,8 @@ export default function LogInView() {
               className={st.input}
               type="password"
               name="password"
-              // value={password}
-              // onChange={handleChange}
+              value={password}
+              onChange={handleChange}
             />
           </label>
 

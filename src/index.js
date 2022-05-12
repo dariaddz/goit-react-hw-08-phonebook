@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
-import { store } from './redux/store';
+import { newStore } from './redux/newStore';
 import { Toaster } from 'react-hot-toast';
 
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={newStore}>
       <BrowserRouter>
         <App />
       </BrowserRouter>

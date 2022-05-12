@@ -1,13 +1,43 @@
 import st from './SignUpView.module.css';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import authOperations from '../../redux/auth/auth-operations';
 
-const SignUpView = () => {
+function SignUpView() {
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = ({ target: { name, value } }) => {
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    dispatch(authOperations.register({ name, email, password }));
+    console.log('submit');
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
+
   return (
     <>
       <div className={st.authView}>
-        <form
-          // onSubmit={ } style={styles.form}
-          autoComplete="off"
-        >
+        <form onSubmit={handleSubmit} autoComplete="off">
           <h2> Sign Up</h2>
           <label className={st.label}>
             Name
@@ -15,8 +45,8 @@ const SignUpView = () => {
               className={st.input}
               type="text"
               name="name"
-              // value={name}
-              // onChange={handleChange}
+              value={name}
+              onChange={handleChange}
             />
           </label>
 
@@ -26,8 +56,8 @@ const SignUpView = () => {
               className={st.input}
               type="email"
               name="email"
-              // value={email}
-              // onChange={handleChange}
+              value={email}
+              onChange={handleChange}
             />
           </label>
 
@@ -37,8 +67,8 @@ const SignUpView = () => {
               className={st.input}
               type="password"
               name="password"
-              // value={password}
-              // onChange={handleChange}
+              value={password}
+              onChange={handleChange}
             />
           </label>
 
@@ -49,6 +79,6 @@ const SignUpView = () => {
       </div>
     </>
   );
-};
+}
 
 export default SignUpView;
