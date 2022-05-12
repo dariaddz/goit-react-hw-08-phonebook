@@ -1,7 +1,7 @@
-import PhonebookForm from '../PhonebookForm';
-import Contacts from '../Contacts';
-import FilterField from '../Filter';
-import st from './Phonebook.module.css';
+import PhonebookForm from '../../components/PhonebookForm';
+import Contacts from '../../components/Contacts';
+import FilterField from '../../components/Filter';
+import st from './PhonebookView.module.css';
 
 export default function Phonebook() {
   return (

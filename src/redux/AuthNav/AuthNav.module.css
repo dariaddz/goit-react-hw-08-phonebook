@@ -1,0 +1,27 @@
+.authNav{display:flex}
+
+.link {
+    text-decoration: none
+}
+
+.navLink {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: none;
+    border-radius: 3px;
+    color: var(--primary-text-color);
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: transform 200ms linear, background-color 200ms linear, color 200ms linear;
+}
+
+.navLink:hover,
+.navLink:focus {
+    transform: scale(1.1);
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color)
+}

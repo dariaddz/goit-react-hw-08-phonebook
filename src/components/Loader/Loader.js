@@ -4,7 +4,7 @@ import s from './Loader.module.css';
 export default function Loader() {
   return (
     <div className={s.container}>
-      <BeatLoader color="rgb(133, 133, 211)" />
+      <BeatLoader color="var(--dark-accent-color)" />
     </div>
   );
 }

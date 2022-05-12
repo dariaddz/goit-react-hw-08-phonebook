@@ -13,6 +13,9 @@ padding-bottom: 10px;
 .login{
     display: flex;
 }
+
+.link{text-decoration: none}
+
 .navLink{
     display: block;
     font-weight: 600;
@@ -23,6 +26,7 @@ padding-bottom: 10px;
     border:none;
     border-radius: 3px;
     color: var(--primary-text-color);
+    background-color:transparent;
     text-transform: uppercase;
     transition: transform 200ms linear, background-color 200ms linear, color 200ms linear;
 }
