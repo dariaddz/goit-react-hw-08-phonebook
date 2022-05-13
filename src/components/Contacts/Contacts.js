@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ContactItem from '../ContactItem';
 import { useSelector } from 'react-redux';
 import { useGetContactsQuery } from 'redux/contactsApi';
-import Loader from 'components/Loader';
+import { Loader } from 'components/Loader';
 import st from './Contacts.module.css';
 
 function Contacts() {

@@ -6,7 +6,7 @@ import authOperations from '../redux/auth/auth-operations';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import authSelectors from 'redux/auth/auth-selector';
-import Loader from 'react-spinners/BeatLoader';
+import { Loader } from './Loader'; 
 
 const WellcomeView = lazy(() => import('../views/WellcomeView'));
 const PhonebookView = lazy(() => import('../views/PhonebookView'));
@@ -26,7 +26,7 @@ export const App=()=> {
   
     return (
       <>
-        <Suspense fallback="loading">
+        <Suspense fallback={<Loader/>}>
           <Routes>
             <Route exact path="/" element={<Layout />}>
               <Route index element={<PublicRoute redirectTo="/contacts" restricted><WellcomeView /></PublicRoute>} />

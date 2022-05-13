@@ -1,28 +1,20 @@
 .authNav{display:flex}
 
 .link {
-    text-decoration: none
-}
-
-.navLink {
-    display: block;
-    font-weight: 600;
+       text-decoration: none;
+    font-weight: 700;
     font-size: 14px;
-    width: 100px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 3px;
+    margin-right: 15px;
     color: var(--primary-text-color);
     background-color: transparent;
     text-transform: uppercase;
-    transition: transform 200ms linear, background-color 200ms linear, color 200ms linear;
-}
+  }
 
-.navLink:hover,
-.navLink:focus {
-    transform: scale(1.1);
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color)
+.activeLink{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 15px;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
 }

@@ -5,26 +5,17 @@ export default function AuthNav() {
   return (
     <div className={st.authNav}>
       <NavLink
-        className={st.link}
+        className={({ isActive }) => (isActive ? st.activeLink : st.link)}
         to="/signup"
-
-        // style={styles.link}
-        // activeStyle={styles.activeLink}
       >
-        <button type="button" className={st.navLink}>
-          Sign Up
-        </button>
+        Sign Up
       </NavLink>
-      <NavLink
-        className={st.link}
-        to="/login"
 
-        // style={styles.link}
-        // activeStyle={styles.activeLink}
+      <NavLink
+        className={({ isActive }) => (isActive ? st.activeLink : st.link)}
+        to="/login"
       >
-        <button className={st.navLink} type="button">
-          Log In
-        </button>
+        Log In
       </NavLink>
     </div>
   );

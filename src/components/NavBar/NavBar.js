@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selector';
 import AuthNav from 'components/AuthNav/AuthNav';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 
@@ -15,18 +15,20 @@ export default function Navbar() {
   return (
     <div className={st.navBar}>
       <div className={st.navMenu}>
-        <Link className={st.link} to="/">
-          <button type="button" className={st.navLink}>
-            Home
-          </button>
-        </Link>
+        <NavLink
+          className={({ isActive }) => (isActive ? st.activeLink : st.link)}
+          to="/"
+        >
+          Home
+        </NavLink>
 
         {isLoggedIn && (
-          <Link className={st.link} to="/contacts">
-            <button type="button" className={st.navLink}>
-              Contacts
-            </button>
-          </Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? st.activeLink : st.link)}
+            to="/contacts"
+          >
+            Contacts
+          </NavLink>
         )}
       </div>
       <h1 className={st.pageHead}>{isLoggedIn && 'Phonebook'}</h1>
