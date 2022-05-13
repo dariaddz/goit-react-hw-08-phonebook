@@ -1,13 +1,27 @@
+
+.wellcomeMessage{
+    font-size: 32px;
+    font-weight: 700;
+}
 .wellcome{display: flex;
     flex-direction: column;
     align-content: center;
 
-    width: 500px;
+    width: 800px;
     margin-top:40px;
     margin-left: auto;
     margin-right: auto;
 }
-.message {display:flex;
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top:40px;
+    margin-bottom: 20px;
+
+
+}
+
+/* .message {display:flex;
 margin-top:30px}
 
 .link {
@@ -34,4 +48,4 @@ margin-top:30px}
     transform: scale(1.1);
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color)
-}
+} */

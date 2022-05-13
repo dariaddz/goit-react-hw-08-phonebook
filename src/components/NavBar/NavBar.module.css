@@ -1,3 +1,7 @@
+.navMenu{
+    display: flex
+}
+
 .navBar{
     display:flex;
     justify-content: space-between;
