@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import st from './Filter.module.css';
 import { filterContacts } from 'redux/FilterSlice';
+// import { useGetContactsQuery } from 'redux/contactsApi';
 
 const FilterField = () => {
   const dispatch = useDispatch();
+  // const { data: contacts } = useGetContactsQuery();
 
   function changeFilter(evt) {
     const value = evt.currentTarget.value;
@@ -16,6 +18,15 @@ const FilterField = () => {
     <div className={st.filter}>
       <label>Find contacts by name </label>
       <input className={st.input} type="text" onChange={changeFilter} />
+      {/* {contacts === {} ? (
+        <h3>You dont have contacts saved</h3>
+      ) : (
+        <>
+          {' '}
+          <label>Find contacts by name </label>
+          <input className={st.input} type="text" onChange={changeFilter} />
+        </>
+      )} */}
     </div>
   );
 };
