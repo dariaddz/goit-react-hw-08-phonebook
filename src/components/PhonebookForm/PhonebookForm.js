@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { useAddContactMutation } from 'redux/contactsApi';
+import { useAddContactMutation, useGetContactsQuery } from 'redux/contactsApi';
 import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
 
 import st from './PhonebookForm.module.css';
 
-function PhonebookForm({ contacts }) {
+function PhonebookForm() {
+  // { contacts }
   const [addContact, isSuccess] = useAddContactMutation();
+  const { data: contacts } = useGetContactsQuery();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -61,7 +63,7 @@ function PhonebookForm({ contacts }) {
             value={name}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+            // required
             onChange={onHandleChange}
           />
         </label>
@@ -74,7 +76,7 @@ function PhonebookForm({ contacts }) {
             value={number}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
+            // required
             onChange={onHandleChange}
           />
         </label>

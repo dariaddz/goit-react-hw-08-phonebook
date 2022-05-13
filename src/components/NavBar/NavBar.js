@@ -20,6 +20,11 @@ export default function Navbar() {
         </button>
       </Link>
 
+      <Link className={st.link} to="/contacts">
+        <button type="button" className={st.navLink}>
+          Contacts
+        </button>
+      </Link>
       <h1 className={st.pageHead}>
         {isLoggedIn ? 'Phonebook' : 'Wellcome to On-line Phonebook'}
       </h1>
