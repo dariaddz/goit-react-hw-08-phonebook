@@ -4,10 +4,13 @@ import { useDispatch } from 'react-redux';
 import st from './Filter.module.css';
 import { filterContacts } from 'redux/FilterSlice';
 import { useGetContactsQuery } from 'redux/contactsApi';
+import { Loader } from 'components/Loader';
 
 const FilterField = () => {
   const dispatch = useDispatch();
-  const { data } = useGetContactsQuery();
+  const { data, isFetching } = useGetContactsQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
 
   function changeFilter(evt) {
     const value = evt.currentTarget.value;
@@ -16,13 +19,14 @@ const FilterField = () => {
 
   return (
     <div className={st.filter}>
-      {data.length === 0 ? (
-        <h5>You don't have saved contacts</h5>
-      ) : (
+      {isFetching && <Loader />}
+      {data && data.length !== 0 ? (
         <>
           <label>Find contacts by name </label>
           <input className={st.input} type="text" onChange={changeFilter} />
         </>
+      ) : (
+        <h5>You don't have saved contacts</h5>
       )}
     </div>
   );
