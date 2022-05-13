@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage';
 
 import authReducer from '../redux/auth/auth-slice';
 import { contactsApi } from 'redux/contactsApi';
-// import contactsReducer from './phonebook-reducers';
+import { filterSlice } from './FilterSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -25,6 +25,7 @@ const authPersistConfig = {
 export const newStore = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    filter: filterSlice.reducer,
     [contactsApi.reducerPath]: contactsApi.reducer,
   },
   middleware: getDefaultMiddleware => [

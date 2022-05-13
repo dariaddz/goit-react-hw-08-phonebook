@@ -48,3 +48,14 @@ padding-bottom: 10px;
 background-color: var(--secondary-background-color);
 color: var(--secondary-text-color)
 }
+
+.circle{
+    display: flex;
+    width: 20px;
+    height:20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right:10px;
+    border-radius: 50%;
+    background-color: var(--dark-accent-color);
+}

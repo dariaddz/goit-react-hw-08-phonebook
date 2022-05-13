@@ -35,6 +35,7 @@ export default function Navbar() {
         {isLoggedIn ? (
           <Link className={st.link} to="/">
             <div className={st.logout}>
+              <div className={st.circle}></div>
               <p className={st.helloMessage}>Hi, {userName}!</p>
               <button
                 type="button"
