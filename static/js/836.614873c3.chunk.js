@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[836],{7836:function(e,l,c){c.r(l),c.d(l,{default:function(){return i}});var n="WellcomeView_wellcomeMessage__z7vMh",o="WellcomeView_wellcome__JMUwJ",s=c(184);function i(){return(0,s.jsx)("div",{className:o,children:(0,s.jsx)("div",{className:n,children:"Start to explore on-line Phonebook service today"})})}}}]);
-//# sourceMappingURL=836.614873c3.chunk.js.map
