@@ -21,11 +21,13 @@ export default function Navbar() {
           </button>
         </Link>
 
-        <Link className={st.link} to="/contacts">
-          <button type="button" className={st.navLink}>
-            Contacts
-          </button>
-        </Link>
+        {isLoggedIn && (
+          <Link className={st.link} to="/contacts">
+            <button type="button" className={st.navLink}>
+              Contacts
+            </button>
+          </Link>
+        )}
       </div>
       <h1 className={st.pageHead}>{isLoggedIn && 'Phonebook'}</h1>
 
