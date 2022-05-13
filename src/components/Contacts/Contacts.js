@@ -15,14 +15,11 @@ function Contacts() {
   );
 
   return (
-    // <></>
     <>
       {isFetching && <Loader />}
       <table className={st.table}>
         <tbody>
           {contactsToShow?.map(contact => {
-            /* {data?.map(contact => { */
-
             return <ContactItem key={contact.id} contact={contact} />;
           })}
         </tbody>

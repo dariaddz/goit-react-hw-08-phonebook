@@ -29,13 +29,34 @@ export const App=()=> {
         <Suspense fallback={<Loader/>}>
           <Routes>
             <Route exact path="/" element={<Layout />}>
-              <Route index element={<PublicRoute redirectTo="/contacts" restricted><WellcomeView /></PublicRoute>} />
+              <Route index
+                element={<PublicRoute redirectTo="/contacts" restricted>
+                  <WellcomeView />
+                </PublicRoute>} />
+              
             {isFetchingCurrentUser ? <Loader/> : 
             <>
-                <Route path="/contacts" element={ <PrivateRoute redirectTo="/login"><PhonebookView /></PrivateRoute>} />
-                <Route path="/signup" element={<PublicRoute redirectTo="/contacts" restricted><SignUpView /></PublicRoute> } />
-                <Route path="/login" element={<PublicRoute redirectTo="/contacts" restricted><LogInView /></PublicRoute>} />
-                <Route path="*" element={<Navigate to="/" />} /> 
+                  <Route
+                    path="/contacts"
+                    element={<PrivateRoute redirectTo="/login">
+                      <PhonebookView />
+                    </PrivateRoute>} />
+                  
+                <Route 
+                path="/signup" 
+                element={<PublicRoute redirectTo="/contacts" restricted>
+                  <SignUpView />
+                    </PublicRoute>} />
+                  
+                <Route 
+                path="/login" 
+                element={<PublicRoute redirectTo="/contacts" restricted>
+                  <LogInView />
+                    </PublicRoute>} />
+                  
+                <Route 
+                path="*" 
+                element={<Navigate to="/" />} /> 
             </>}
             </Route>
           </Routes>

@@ -9,8 +9,7 @@
     border: 2px solid var(--light-accent-color);
     border-radius: 3px;
     background-color: var(--secondary-background-color);
-    /* opacity: 0.8; */
-    color: var(--primary-text-color);
+     color: var(--primary-text-color);
     margin:5px;
     padding:5px;
     font-size: 10px;

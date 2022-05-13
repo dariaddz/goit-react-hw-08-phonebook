@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import st from './Filter.module.css';
 import { filterContacts } from 'redux/FilterSlice';
-// import { useGetContactsQuery } from 'redux/contactsApi';
+import { useGetContactsQuery } from 'redux/contactsApi';
 
 const FilterField = () => {
   const dispatch = useDispatch();
-  // const { data: contacts } = useGetContactsQuery();
+  const { data } = useGetContactsQuery();
 
   function changeFilter(evt) {
     const value = evt.currentTarget.value;
@@ -16,17 +16,14 @@ const FilterField = () => {
 
   return (
     <div className={st.filter}>
-      <label>Find contacts by name </label>
-      <input className={st.input} type="text" onChange={changeFilter} />
-      {/* {contacts === {} ? (
-        <h3>You dont have contacts saved</h3>
+      {data.length === 0 ? (
+        <h5>You don't have saved contacts</h5>
       ) : (
         <>
-          {' '}
           <label>Find contacts by name </label>
           <input className={st.input} type="text" onChange={changeFilter} />
         </>
-      )} */}
+      )}
     </div>
   );
 };

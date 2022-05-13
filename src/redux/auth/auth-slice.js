@@ -39,5 +39,4 @@ const authSlice = createSlice({
   },
 });
 
-// export const { filterContacts } = filterSlice.actions;
 export default authSlice.reducer;

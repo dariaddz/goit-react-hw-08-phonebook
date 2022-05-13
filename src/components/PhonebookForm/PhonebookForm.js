@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import st from './PhonebookForm.module.css';
 
 function PhonebookForm() {
-  // { contacts }
   const [addContact, isSuccess] = useAddContactMutation();
   const { data: contacts } = useGetContactsQuery();
   const [name, setName] = useState('');

@@ -1,6 +1,4 @@
 form {
-  /* border: 2px solid var(--light-accent-color); */
-  /* padding: 10px; */
   display: flex;
   flex-direction: column;
 }
@@ -39,9 +37,6 @@ background-color: var(--primary-background-color)
   text-transform: uppercase;
     transition: transform 200ms linear, font-weight 200ms linear;
 }
-/* .button:active {
-  box-shadow: 0 5px #666;
-} */
 
 .button:hover,
 .button:focus {

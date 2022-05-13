@@ -40,10 +40,6 @@ margin-top:40px
     transition: transform 200ms linear, font-weight 200ms linear;
 }
 
-/* .button:active {
-    box-shadow: 0 5px #666;
-} */
-
 .button:hover,
 .button:focus {
     opacity: 1;
