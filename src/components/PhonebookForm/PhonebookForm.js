@@ -8,21 +8,13 @@ import st from './PhonebookForm.module.css';
 function PhonebookForm() {
   const [addContact, isSuccess] = useAddContactMutation();
   const { data: contacts } = useGetContactsQuery();
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [state, setState] = useState({ name: '', number: '' });
+
+  const { name, number } = state;
 
   const onHandleChange = evt => {
-    const { name, value } = evt.target;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return;
-    }
+    const { name, value } = evt.currentTarget;
+    setState(prev => ({ ...prev, [name]: value }));
   };
 
   const validationName =
@@ -42,12 +34,10 @@ function PhonebookForm() {
       toast.error('You already have this number in your phonebook');
       return;
     }
+
     addContact({ name, number });
-
     isSuccess && toast.success('New contact was added to you phonebook');
-
-    setName('');
-    setNumber('');
+    setState({ name: '', number: '' });
   };
 
   return (
